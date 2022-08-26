@@ -1,4 +1,7 @@
 const inquirer = require('inquirer');
+const Employee = require('./lib/employee');
+const Manager = require('./lib/manager');
+
 
 // const questionsManager = [
 //     {
@@ -104,7 +107,8 @@ function getEmployeeInfo(type) {
             switch (type) {
                 case 'Manager':
                     // need to construct the manager, maybe pass the type and answers into a function that constructs
-                    console.log(type);
+                    const newManager = new Manager(answers.name, answers.employeeId, answers.email, answers.roomNumber);
+                    console.log(newManager);
                     break;
                 case 'Intern':
                     // need to construct the Intern, maybe pass the type and answers into a function that constructs
@@ -133,3 +137,5 @@ function getEmployeeInfo(type) {
 const buildTeam = getEmployeeInfo('Manager');
 
 buildTeam;
+
+
