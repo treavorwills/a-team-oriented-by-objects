@@ -101,6 +101,20 @@ function getEmployeeInfo(type) {
     inquirer
         .prompt(questions)
         .then(answers => {
+            switch (type) {
+                case 'Manager':
+                    // need to construct the manager, maybe pass the type and answers into a function that constructs
+                    console.log(type);
+                    break;
+                case 'Intern':
+                    // need to construct the Intern, maybe pass the type and answers into a function that constructs
+                    console.log(type);
+                    break;
+                case 'Engineer':
+                    // need to construct the Engineer, maybe pass the type and answers into a function that constructs
+                    console.log(type);
+                    break;
+            };
             console.info('answers: ', answers);
             if (answers.nextStep === 'Add an engineer') {
                 console.log('Add engineer');
