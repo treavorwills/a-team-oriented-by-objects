@@ -1,56 +1,8 @@
 const inquirer = require('inquirer');
 const Employee = require('./lib/employee');
+const Intern = require('./lib/intern');
 const Manager = require('./lib/manager');
-
-
-// const questionsManager = [
-//     {
-//         name: 'officeNum',
-//         message: 'Office number: ',
-//     },
-// ];
-
-// const questionsNextAction = [
-//     {
-//         type: 'list',
-//         name: 'nextStep',
-//         message: 'I would like to: ',
-//         choices: [
-//             'Add an engineer',
-//             'Add an intern',
-//             'Finish building my team',
-//         ],
-//     },
-// ];
-
-// const questions = [
-//     {
-//         name: 'name',
-//         message: 'Name: ',
-//     },
-//     {
-//         name: 'employeeId',
-//         message: 'Employee ID: ',
-//     },
-//     {
-//         name: 'email',
-//         message: 'Email: ',
-//     },
-// ];
-
-// const questionsEngineer = [
-//     {
-//         name: 'github',
-//         message: 'GitHub username: ',
-//     },
-// ];
-
-// const questionsIntern = [
-//     {
-//         name: 'school',
-//         message: 'Intern\'s school: ',
-//     },
-// ];
+const Engineer= require('./lib/engineer');
 
 function getEmployeeInfo(type) {
     let questions = [];
@@ -107,35 +59,35 @@ function getEmployeeInfo(type) {
             switch (type) {
                 case 'Manager':
                     // need to construct the manager, maybe pass the type and answers into a function that constructs
-                    const newManager = new Manager(answers.name, answers.employeeId, answers.email, answers.roomNumber);
-                    console.log(newManager);
+                    const manager = new Manager(answers.name, answers.employeeId, answers.email, answers.roomNumber);
+                    theTeam.push(manager);
                     break;
                 case 'Intern':
                     // need to construct the Intern, maybe pass the type and answers into a function that constructs
-                    console.log(type);
+                    const newIntern = new Intern(answers.name, answers.employeeId, answers.email, answers.school);
+                    theTeam.push(newIntern);
                     break;
                 case 'Engineer':
                     // need to construct the Engineer, maybe pass the type and answers into a function that constructs
-                    console.log(type);
+                    const newEngineer = new Engineer(answers.name, answers.employeeId, answers.email, answers.gitHub);
+                    theTeam.push(newEngineer);
                     break;
             };
-            console.info('answers: ', answers);
             if (answers.nextStep === 'Add an engineer') {
-                console.log('Add engineer');
                 getEmployeeInfo('Engineer');
             }
             else if (answers.nextStep === 'Add an intern') {
-                console.log('add an intern');
                 getEmployeeInfo('Intern');
             }
             else if (answers.nextStep === 'Finish building my team') {
                 console.log('Team complete');
+                console.log(theTeam);
             };
         });
 };
 
+const theTeam = [];
 const buildTeam = getEmployeeInfo('Manager');
 
 buildTeam;
-
 
