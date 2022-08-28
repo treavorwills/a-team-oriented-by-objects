@@ -81,10 +81,14 @@ function getEmployeeInfo(type) {
             }
             else if (answers.nextStep === 'Finish building my team') {
                 console.log('Team complete');
-                console.log(theTeam);
+                displayTeam(theTeam);
             };
         });
 };
+
+displayTeam = (theTeam) => {
+    console.log(theTeam);
+}
 
 const theTeam = [];
 const buildTeam = getEmployeeInfo('Manager');
