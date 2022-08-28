@@ -69,7 +69,7 @@ function getEmployeeInfo(type) {
                     break;
                 case 'Engineer':
                     // need to construct the Engineer, maybe pass the type and answers into a function that constructs
-                    const newEngineer = new Engineer(answers.name, answers.employeeId, answers.email, answers.gitHub);
+                    const newEngineer = new Engineer(answers.name, answers.employeeId, answers.email, answers.github);
                     theTeam.push(newEngineer);
                     break;
             };
@@ -88,6 +88,5 @@ function getEmployeeInfo(type) {
 
 const theTeam = [];
 const buildTeam = getEmployeeInfo('Manager');
-
 buildTeam;
 
