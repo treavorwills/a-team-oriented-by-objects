@@ -4,6 +4,9 @@ const Intern = require('./lib/intern');
 const Manager = require('./lib/manager');
 const Engineer= require('./lib/engineer');
 const quotes = require('./lib/quotes');
+const generateHTML = require('./lib/generateHTML');
+const fs = require('fs');
+
 
 function getEmployeeInfo(type) {
     let questions = [];
@@ -87,8 +90,13 @@ function getEmployeeInfo(type) {
         });
 };
 
+function writeToFile(fileName, data) {
+    fs.writeFileSync(fileName, data, (err) => err ? console.info(err) : console.info('Success!'));
+}
+
 assembleTeam = (theTeam) => {
-    console.log(theTeam);
+    // console.log(theTeam);
+    writeToFile('./dist/test.html',generateHTML(theTeam));
 }
 
 const theTeam = [];
