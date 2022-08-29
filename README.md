@@ -13,8 +13,7 @@ Node.js command-line application that generates an HTML page based on user input
 ### Screenshot
 ![image](https://user-images.githubusercontent.com/25040852/187137443-f15d8a47-dc86-4f92-9ed2-a59f89c34967.png)
 
-### Walkthrough Video
-[https://drive.google.com/file/d/1v7AqxvfcJWPNihbLD0XukSfSmR2ucqvB/view](Google Drive Link)
+### [Walkthrough Video] (https://drive.google.com/file/d/1v7AqxvfcJWPNihbLD0XukSfSmR2ucqvB/view)
 
 ## Features
 node, javascript, inquirer
