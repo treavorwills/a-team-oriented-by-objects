@@ -3,6 +3,7 @@ const Employee = require('./lib/employee');
 const Intern = require('./lib/intern');
 const Manager = require('./lib/manager');
 const Engineer= require('./lib/engineer');
+const quotes = require('./lib/quotes');
 
 function getEmployeeInfo(type) {
     let questions = [];
@@ -81,16 +82,16 @@ function getEmployeeInfo(type) {
             }
             else if (answers.nextStep === 'Finish building my team') {
                 console.log('Team complete');
-                displayTeam(theTeam);
+                assembleTeam(theTeam);
             };
         });
 };
 
-displayTeam = (theTeam) => {
+assembleTeam = (theTeam) => {
     console.log(theTeam);
 }
 
 const theTeam = [];
 const buildTeam = getEmployeeInfo('Manager');
-buildTeam;
-
+buildTeam
+// .then (console.log(quotes));

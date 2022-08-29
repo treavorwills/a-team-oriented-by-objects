@@ -23,7 +23,19 @@ header h1{
 /* Styling for the section/middle/card container */
 
 section{
+    background-image: url("./img/cork-board.webp");
     margin:var(--body-children-margin);
+}
+
+@keyframes slidein {
+    from{
+        margin-left:200%;
+        width:600%;
+    }
+    to{
+        margin-left:0%;
+        /* width:100%; */
+    }
 }
 
 .flex-container{
@@ -45,12 +57,16 @@ section{
 .team-cards{
     border: 1px solid green;
     justify-content: center;
-    background-image: url("./img/cork-board.webp");
+    animation-duration: 1s;
+    animation-name: slidein;
+}
+
+.cool-background{
+    background-image: url("./img/cool-background.png");
 }
 
 .card{
-    background-image: url("./img/cool-background.png");
-    background-position: bottom;
+    background-position: top;
     padding: 5px;
     /* https://coolbackgrounds.io/ */
     border-radius: 10px;
@@ -61,12 +77,23 @@ section{
 .card-content{
     margin: var(--body-children-margin);
     flex-direction: column;
-    border: 1px double rgb(73, 73, 73);
+    border: 1px groove rgb(73, 73, 73);
     border-radius: 5px;
     padding: 5px;
-    background-image: url("./img/cool-background.png");
     background-position: center;
 }
+
+.card:hover{
+    animation: shake .5s;
+    animation-timing-function: linear;
+}
+
+@keyframes shake {
+    0% {transform: rotate(1deg);}
+    50% {transform: rotate(-1deg);}
+    100% {transform: rotate(0deg);}
+}
+  
 
 .card-header{
     justify-content: space-between;
@@ -104,7 +131,7 @@ section{
     align-items: flex-end;
 }
 
-.card-id-text{
+.bold{
     font-weight: bold;
 }
 
@@ -118,7 +145,31 @@ section{
 }
 
 img{
-    border: 2px outset grey;
+    border: 2px groove rgb(27, 27, 27);
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.card-email a{
+    color: black;
+    font-size: larger;
+}
+
+.link:hover{
+    color: rgb(70, 0, 175);
+}
+
+.card-quote{
+    flex-direction: column;
+    padding: 15px;
+}
+
+.quote-author{
+    font-weight: lighter;
+    padding-top: 10px;;
 }
 
 /* end styling for section/middle/card container */
