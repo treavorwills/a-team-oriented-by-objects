@@ -96,7 +96,7 @@ function writeToFile(fileName, data) {
 
 assembleTeam = (theTeam) => {
     // console.log(theTeam);
-    writeToFile('./dist/test.html',generateHTML(theTeam));
+    writeToFile('./dist/index.html',generateHTML(theTeam));
 }
 
 const theTeam = [];
